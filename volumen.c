@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 #define pi 3.1416
-void cuad(float *ar);
+void sq(float *ar);
 void trian(float *ar);
 void circ(float *ar);
-void poli(float *ar);
+void poly(float *ar);
 
 int main (void) {
 		char vol;
@@ -37,7 +37,7 @@ int main (void) {
 				printf("Square = 1 / Triangle = 2 / Circle = 3 / Polygon = 4\n");
 				scanf("%i",&base);
 				if (base==1) {
-						cuad(&ar);	
+						sq(&ar);	
 						ext=ar*h;
 						printf("Volume: %.2f m3\n",ext);
 				}
@@ -52,7 +52,7 @@ int main (void) {
 						printf("Volume: %.2f m3\n",ext);
 				}
 				else if (base==4) {
-						poli(&ar);
+						poly(&ar);
 						ext=ar*h;
 						printf("Volume: %.2f m3\n",ext);
 				}
@@ -70,7 +70,7 @@ int main (void) {
 				printf("Square = 1 / Triangle = 2 / Circle = 3 / Polygon = 4\n");
 				scanf("%i",&base);
 				if (base==1) {
-						cuad(&ar);	
+						sq(&ar);	
 						ext=(ar*h)/3;
 						printf("Volume: %.2f m3\n",ext);
 				}
@@ -85,7 +85,7 @@ int main (void) {
 						printf("Volume: %.2f m3\n",ext);
 				}
 				else if (base==4) {
-						poli(&ar);
+						poly(&ar);
 						ext=(ar*h)/3;
 						printf("Volume: %.2f m3\n",ext);
 				}
@@ -101,7 +101,7 @@ int main (void) {
 		return 0;
 }
 
-void cuad (float *ar){
+void sq (float *ar){
 		float x[2];
 		printf("Side x size: ");
 		scanf("%f",&x[0]);
@@ -124,7 +124,7 @@ void circ (float *ar){
 		scanf("%f",&x);
 		*ar = pi * powf(x,2);
 }
-void poli (float *ar){
+void poly (float *ar){
 		float x[4];
 		printf("Number of sides: ");
 		scanf("%f",&x[0]);
